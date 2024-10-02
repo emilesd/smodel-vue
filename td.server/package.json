@@ -18,7 +18,7 @@
     "stop:server": "pm2 delete td.server",
     "transpile": "babel ./src --out-dir dist",
     "test": "NODE_ENV=test nyc mocha --require @babel/register --all true --timeout=900 test/*.spec.js test/**/*.spec.js",
-    "test:unit": "NODE_ENV=test nyc --reporter=lcov --reporter=text-summary mocha --require @babel/register --all true --timeout=900 test/*.spec.js test/**/*.spec.js"
+    "test:unit": "cross-env NODE_ENV=test nyc --reporter=lcov --reporter=text-summary mocha --require @babel/register --all true --timeout=900 test/*.spec.js test/**/*.spec.js"
   },
   "description": "OWASP Threat Dragon - a free, open source threat modeling tool",
   "author": {
@@ -45,6 +45,7 @@
     "dotenv": "^16.0.3",
     "express": "^4.20.0",
     "express-rate-limit": "^7.4.0",
+    "googleapis": "^144.0.0",
     "helmet": "^6.0.1",
     "jsonwebtoken": "^9.0.0",
     "octonode": "^0.10.2",
